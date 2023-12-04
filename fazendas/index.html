@@ -1,0 +1,35 @@
+
+{% extends "base.html" %}
+{% block title %} Fazendas {% endblock %}
+
+{% block nav %} 
+<li class="nav-item active">
+  <a class="nav-link" href="/">Home</a>
+</li>
+{% endblock %}
+
+{% block content %}
+<h1>Fazendas</h1>
+<table class="table table-hover">
+  <thead class="thead-dark">
+    <tr align="center">
+        <th>Nome</th>
+        <th>Área (ha)</th>
+        <th>Endereço</th>
+        <th>Contato</th>
+        <th>Proprietário</th>
+    </tr>
+  </thead>
+    {% for fazenda in fazendas %}
+    <tr align="center">
+      <td>{{ fazenda.nome }}</td>
+      <td>{{ fazenda.area }}</td>
+      <td>{{ fazenda.endereco }}</td>
+      <td>{{ fazenda.contato }}</td>
+      <td>{{ fazenda.dono }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<br>
+<a href="{{ url_for('fazendas_cad') }}">Cadastrar Nova Fazenda</a>
+{% endblock %}

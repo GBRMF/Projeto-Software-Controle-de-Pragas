@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Pest Monitorig{% endblock %}
+
+{% block nav %}
+<li class="nav-item active">
+  <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+</li>
+
+<li class="nav-item">
+  <!-- url_for aponta para o método mapeado na rota -->
+  <a class="nav-link" href="{{ url_for('fazendas_list') }}">Fazendas</a>
+</li>
+
+<li class="nav-item">
+  <!-- url_for aponta para o método mapeado na rota -->
+  <a class="nav-link" href="{{ url_for('tecnicos_list') }}">Técnicos</a>
+</li>
+
+<li class="nav-item">
+  <!-- url_for aponta para o método mapeado na rota -->
+  <a class="nav-link" href="{{ url_for('safras_list') }}">Safras</a>
+</li>
+
+<li class="nav-item">
+  <!-- url_for aponta para o método mapeado na rota -->
+  <a class="nav-link" href="{{ url_for('pragas_list') }}">Pragas</a>
+</li>
+
+<li class="nav-item">
+  <!-- url_for aponta para o método mapeado na rota -->
+  <a class="nav-link" href="{{ url_for('apontamentos_list') }}">Apontamentos</a>
+</li>
+
+{% endblock %}
+
+{% block content %}{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Safras{% endblock %}
+
+{% block nav %} 
+<li class="nav-item active">
+  <a class="nav-link" href="/">Home</a>
+</li>
+{% endblock %}
+
+{% block content %}
+    <h1>Safras</h1>
+    <table class="table table-hover">
+        <tr>
+            <th>Nome</th>
+        </tr>
+        {% for safra in safras %}
+        <tr>
+            <td>{{ safra.nome }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="{{ url_for('safras_cad') }}">Cadastrar Nova Safra</a>
+{% endblock %}

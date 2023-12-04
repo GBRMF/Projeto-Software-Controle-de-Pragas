@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %} Pragas {% endblock %}
+
+{% block nav %} 
+<li class="nav-item active">
+  <a class="nav-link" href="/">Home</a>
+</li>
+{% endblock %}
+
+{% block content %}
+<h1>Pragas</h1>
+<table class="table table-hover">
+  <thead class="thead-dark">
+    <tr>
+        <th>Nome</th>
+        <th>Nome Científico</th>
+    </tr>
+  </thead>
+        {% for praga in pragas %}
+        <tr>
+            <td>{{ praga.nome }}</td>
+            <td>{{ praga.nome_cientifico}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="{{ url_for('pragas_cad') }}">Cadastrar Nova Praga</a>
+{% endblock %}

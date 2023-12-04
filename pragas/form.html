@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Cadastro de Pragas{% endblock %}
+
+{% block nav %} 
+<li class="nav-item active">
+  <a class="nav-link" href="/">Home</a>
+</li>
+{% endblock %}
+
+{% block content %}
+    <h1>Cadastro de Pragas</h1>
+    <form method="POST">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        <br>
+        <label for="nome_cientifico">Nome científico:</label>
+        <input type="text" id="nome_cientifico" name="nome_cientifico" required>
+        <br>
+        <button type="submit">Cadastrar</button>
+    </form>
+    <br>
+    <a href="{{ url_for('pragas_list') }}">Ver Lista</a>
+{% endblock %}

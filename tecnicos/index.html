@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %} Lista de Técnicos {% endblock %}
+
+{% block nav %} 
+<li class="nav-item active">
+  <a class="nav-link" href="/">Home</a>
+</li>
+{% endblock %}
+
+{% block content %}
+    <h1>Lista de Técnicos</h1>
+    <table class="table">
+        <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+        </tr>
+        <!-- percorre a lista de técnicos para montar os dados da tabela no front  -->
+        {% for tec in tecnicos %}
+        <tr>
+            <td>{{ tec.nome }}</td>
+            <td>{{ tec.idade }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="{{ url_for('tecnicos_cad') }}">Cadastrar Novo</a>
+{% endblock %}

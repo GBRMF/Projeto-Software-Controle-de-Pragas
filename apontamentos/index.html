@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %} Apontamentos {% endblock %}
+
+{% block nav %} 
+<li class="nav-item active">
+  <a class="nav-link" href="/">Home</a>
+</li>
+{% endblock %}
+
+{% block content %}
+<h1>Apontamentos</h1>
+<table class="table table-hover">
+  <thead class="thead-dark"> <!-- Títulos da tabela -->
+    <tr>
+      <th>Safra</th>
+      <th>Talhão</th>
+      <th>Praga</th>
+      <th>Quantidade</th>
+      <th>Data de Leitura</th>
+    </tr>
+  </thead> <!-- fim do título -->
+  
+  <!-- Bloco de código em python que vai percorrer a lista de dados
+  de leituras para montagem dos dados da tabela-->
+  {% for apont in apontamentos %}
+  <tr>
+    <td>{{ apont.safra }}</td>
+    <td>{{ apont.talhao}}</td>
+    <td>{{ apont.praga }}</td>
+    <td>{{ apont.qtd }}</td>
+    <td>{{ apont.dt }}</td>
+  </tr>
+  {% endfor %}
+  
+</table>
+<br>
+<a href="{{ url_for('apontamentos_cad') }}">Cadastrar Novo Apontamento</a>
+{% endblock %}

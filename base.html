@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <!-- Adicione os imports do Bootstrap ou outros estilos aqui -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Barra de navegação padrão  -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Pest Monitoring</a>
+      <button class="navbar-toggler" type="button" 
+              data-toggle="collapse" data-target="#navbarNav" 
+              aria-controls="navbarNav" aria-expanded="false" 
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+        
+          <!-- bloco para os menus específicos de cada tela  -->
+          {% block nav %} {% endblock %}
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <!-- bloco para os conteúdos específicos de cada página -->
+      {% block content %}
+      {% endblock %}
+    </div>
+
+</body>
+</html>
